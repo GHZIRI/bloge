@@ -1,30 +1,37 @@
 <?php
-
 require_once "db.php";
 require_once "article.php";
 
 $database = new Database();
-$conn = $database->getConnection();
+$db = $database->getConnection();
 
-$article = new Article($conn);
-$article1 = $article->read();
-
+$articleObj = new Article($db);
+$posts = $articleObj->read(); 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Blog Index</title>
+    <style>
+        .post { border: 1px solid #ccc; padding: 15px; margin: 10px 0; }
+        .link { color: blue; text-decoration: none; }
+    </style>
 </head>
 <body>
-   <div class="article-summary">
-    <h2><?php echo $art['title']; ?></h2>
-    
-    <p><?php echo substr($art['contenu'], 0, 120); ?>...</p> 
-    
-    <a href="article_full.php?id=<?php echo $art['id_article']; ?>" class="btn">إقرأ المقال كاملاً</a>
-</div>
+
+    <h1>Articles List</h1>
+
+    <?php foreach($posts as $art): ?>
+        <div class="post">
+            <h2><?php echo $art['title']; ?></h2>
+            <p><?php echo substr($art['contenu'], 0, 100); ?>...</p>
+            <a href="article_detail.php?id=<?php echo $art['id_article']; ?>" class="link">
+                Read More
+            </a>
+        </div>
+    <?php endforeach; ?>
+
 </body>
 </html>
