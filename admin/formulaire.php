@@ -1,0 +1,58 @@
+<?php
+require_once "../core/db.php";
+require_once "../core/article.php";
+
+$database = new Database();
+$db = $database->getConnection();
+
+$article = new Article($db);
+
+if(isset($_POST["add"])){
+    $article->title = $_POST['title'];
+    $article->contenu = $_POST['contenu'];
+    $article->status = 'published';
+    $article->date_publication = date('Y-m-d H:i:s');
+    
+    $article->id_user = 1; 
+    $article->id_catalog = 1;
+
+    if($article->create()){
+        header("Location: home.php");
+        exit();
+    } else {
+        echo "<p style='color:red;'>Problem with the add-on!</p>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/article_php.css">
+    <title>Add Article</title>
+</head>
+<body>
+    <div class="form-page">
+        <div class="form-card">
+            <header class="form-card__header">
+                <h1>Ajouter un article</h1>
+            </header>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input id="title" class="input-field" type="text" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="contenu">Content</label>
+                    <textarea id="contenu" class="textarea-field" name="contenu" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <button class="btn" type="submit" name="add">Add new article</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
