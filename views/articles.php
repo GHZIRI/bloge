@@ -7,6 +7,7 @@ $db = $database->getConnection();
 
 $articleObj = new Article($db);
 $posts = $articleObj->read();
+$currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!DOCTYPE html>
@@ -15,16 +16,16 @@ $posts = $articleObj->read();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Articles - Blog</title>
-    <link rel="stylesheet" href="../assets/css/aericle.css">
+    <link rel="stylesheet" href="../assets/css/article.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-brand">Welcome to my blog</div>
         <ul class="nav-links">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="articles.php" class="active">Articles</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="index.php" class="<?php echo $currentPage === 'index.php' ? 'active' : ''; ?>">Home</a></li>
+            <li><a href="articles.php" class="<?php echo $currentPage === 'articles.php' ? 'active' : ''; ?>">Articles</a></li>
+            <li><a href="contact.php" class="<?php echo $currentPage === 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
         </ul>
     </nav>
 

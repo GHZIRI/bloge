@@ -30,7 +30,7 @@ if(isset($_POST["add"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/article_php.css">
+    <link rel="stylesheet" href="../assets/css/formulaire.css">
     <title>Add Article</title>
 </head>
 <body>

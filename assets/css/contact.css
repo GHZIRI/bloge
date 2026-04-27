@@ -1,0 +1,128 @@
+:root {
+    --page-bg: #e7eef7;
+    --surface: #ffffff;
+    --surface-soft: #f1f5f9;
+    --border: #cbd5e1;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --accent: #2563eb;
+    --accent-strong: #1d4ed8;
+}
+
+ body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--page-bg);
+    color: var(--text-primary);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.container {
+    width: min(900px, 100% - 2rem);
+    margin: 2.5rem auto;
+    padding: 0;
+}
+
+.contact-wrapper {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 2rem;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.contact-wrapper h1 {
+    margin-top: 0;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-soft);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.95rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: var(--accent-strong);
+}

@@ -1,0 +1,142 @@
+:root {
+    --page-bg: #e7eef7;
+    --surface: #ffffff;
+    --surface-soft: #f1f5f9;
+    --border: #cbd5e1;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --accent: #2563eb;
+    --accent-strong: #1d4ed8;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--page-bg);
+    color: var(--text-primary);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(180deg, rgba(37, 99, 235, 0.08), transparent);
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+header p {
+    margin: 0.75rem auto 0;
+    max-width: 720px;
+    color: var(--text-secondary);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1rem 0;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.08);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--accent);
+    color: #ffffff;
+}
+
+.container {
+    width: min(1100px, 100% - 2rem);
+    margin: 2rem auto 3rem;
+    padding: 0;
+}
+
+.articles-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.post-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.post-card__title {
+    margin: 0 0 1rem;
+    font-size: 1.35rem;
+    color: var(--text-primary);
+}
+
+.post-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.post-card__excerpt {
+    flex-grow: 1;
+    margin: 0 0 1.25rem;
+    color: var(--text-secondary);
+}
+
+.read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.read-more:hover {
+    background: var(--accent-strong);
+}
+
+.empty-state {
+    padding: 2rem;
+    border: 1px dashed var(--border);
+    border-radius: 18px;
+    background: var(--surface-soft);
+    color: var(--text-secondary);
+    text-align: center;
+}
+ 

@@ -1,19 +1,20 @@
+<?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Blog</title>
-    <link rel="stylesheet" href="../assets/css/viewer.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav-brand">Welcome to my blog</div>
         <ul class="nav-links">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="articles.php">Articles</a></li>
-            <li><a href="contact.php" class="active">Contact</a></li>
+            <li><a href="index.php" class="<?php echo $currentPage === 'index.php' ? 'active' : ''; ?>">Home</a></li>
+            <li><a href="articles.php" class="<?php echo $currentPage === 'articles.php' ? 'active' : ''; ?>">Articles</a></li>
+            <li><a href="contact.php" class="<?php echo $currentPage === 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
         </ul>
     </nav>
 
@@ -22,7 +23,9 @@
             <h1>Get in Touch</h1>
             <p class="subtitle">We'd love to hear from you. Send us a message!</p>
             
-            <form action="" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="aca30324-4dbe-480d-bd32-11cb418fb742">
+                
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
@@ -42,6 +45,5 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>
