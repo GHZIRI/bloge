@@ -43,14 +43,6 @@ if (isset($_POST["register"])) {
     <div class="auth-card">
         <h2>Create a new account</h2>
 
-        <?php if ($success): ?>
-            <div class="success-message"><?php echo $success; ?></div>
-        <?php endif; ?>
-
-        <?php if ($error): ?>
-            <div class="error-message"><?php echo $error; ?></div>
-        <?php endif; ?>
-
         <form action="" method="POST">
             <label>Name:</label>
             <input type="text" name="name" required>
