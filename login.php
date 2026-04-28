@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 require_once "core/db.php";
@@ -38,12 +39,15 @@ if (isset($_POST["clicke"])) {
     }
 }
 ?>
+=======
+>>>>>>> 2905c04a9f5473494e641f51f3a3a90f881ecf9f
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>bloge</title>
     <link rel="stylesheet" href="assets/css/login.css">
 </head>
@@ -67,5 +71,20 @@ if (isset($_POST["clicke"])) {
 
         <p>Don&apos;t have an account? <a href="register.php">Create one here</a></p>
     </div>
+=======
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+     <form action="">
+        <label for="">Name</label>
+        <input type="text" name="name" id=""><br>
+        <label for="">Email</label>
+        <input type="email" name="email" id=""><br>
+        <label for="">Password</label>
+        <input type="password" name="poassword" id=""><br>
+        <button type="submit" name="clicke">login</button>
+     </form>
+>>>>>>> 2905c04a9f5473494e641f51f3a3a90f881ecf9f
 </body>
 </html>
