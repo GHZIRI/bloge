@@ -126,17 +126,39 @@ body {
 .submit-btn:hover {
     background: var(--accent-strong);
 }
-.logout-btn {
-    background-color: #e74c3c;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
+/* User badge */
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(37, 99, 235, 0.07);
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
 }
 
-.logout-btn:hover {
-    background-color: #c0392b;
+.user-icon {
+    font-size: 1.1rem;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+.logout-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #dc2626;
+    text-decoration: none;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.logout-link:hover {
+    background: #dc2626;
+    color: #fff;
 }

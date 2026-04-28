@@ -1,4 +1,7 @@
-<?php $currentPage = basename($_SERVER['PHP_SELF']); ?>
+<?php
+session_start();
+$currentPage = basename($_SERVER['PHP_SELF']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,6 @@
     <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
 <body>
-<button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>
     <nav class="navbar">
         <div class="nav-brand">Welcome to my blog</div>
         <ul class="nav-links">
@@ -16,6 +18,13 @@
             <li><a href="articles.php" class="<?php echo $currentPage === 'articles.php' ? 'active' : ''; ?>">Articles</a></li>
             <li><a href="contact.php" class="<?php echo $currentPage === 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
         </ul>
+        <?php if (isset($_SESSION['user_name'])): ?>
+            <div class="nav-user">
+                <span class="user-icon">&#128100;</span>
+                <span class="user-name"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                <a href="../logout.php" class="logout-link">Logout</a>
+            </div>
+        <?php endif; ?>
     </nav>
 
     <div class="container">

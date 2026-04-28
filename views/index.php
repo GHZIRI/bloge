@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../core/db.php";
 require_once "../core/article.php";
 
@@ -21,7 +22,6 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 </head>
 <body>
     
-    <button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>
     <header>
         <h1>Welcome to my blog</h1>
         <p>Explore the latest articles on technology, education, and storytelling.</p>
@@ -33,6 +33,13 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <li><a href="articles.php" class="<?php echo $currentPage === 'articles.php' ? 'active' : ''; ?>">Articles</a></li>
             <li><a href="contact.php" class="<?php echo $currentPage === 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
         </ul>
+        <?php if (isset($_SESSION['user_name'])): ?>
+            <div class="nav-user">
+                <span class="user-icon">&#128100;</span>
+                <span class="user-name"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                <a href="../logout.php" class="logout-link">Logout</a>
+            </div>
+        <?php endif; ?>
     </nav>
 
     <main>

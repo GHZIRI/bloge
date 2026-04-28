@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../core/db.php"; 
 require_once "../core/article.php";
 
@@ -33,6 +34,20 @@ if(isset($_GET['id'])) {
     <title><?php echo htmlspecialchars($art['title']); ?></title>
 </head>
 <body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="articles.php" class="active">Articles</a></li>
+            <li><a href="contact.php">Contact</a></li>
+        </ul>
+        <?php if (isset($_SESSION['user_name'])): ?>
+            <div class="nav-user">
+                <span class="user-icon">&#128100;</span>
+                <span class="user-name"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                <a href="../logout.php" class="logout-link">Logout</a>
+            </div>
+        <?php endif; ?>
+    </nav>
     <div class="article-page">
         <header class="article-header">
             <h1><?php echo htmlspecialchars($art['title']); ?></h1>

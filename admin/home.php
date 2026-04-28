@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../core/db.php";
 require_once "../core/article.php";
 
@@ -17,7 +18,16 @@ $posts = $articleObj->read();
     <title>Blog</title>
 </head>
 <body>
-<button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>   
+    <nav class="admin-navbar">
+        <div class="admin-brand">&#9881; Admin Dashboard</div>
+        <?php if (isset($_SESSION['user_name'])): ?>
+            <div class="nav-user">
+                <span class="user-icon">&#128100;</span>
+                <span class="user-name"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                <a href="../logout.php" class="logout-link">Logout</a>
+            </div>
+        <?php endif; ?>
+    </nav>
     <div class="page">
         <header class="page-header">
             <h1>My Blog Articles</h1>
