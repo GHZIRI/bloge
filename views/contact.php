@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Blog</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
 <body>
-
+<button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>
     <nav class="navbar">
         <div class="nav-brand">Welcome to my blog</div>
         <ul class="nav-links">

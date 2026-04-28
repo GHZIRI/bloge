@@ -39,9 +39,10 @@ if(isset($_POST['update'])) {
     <link rel="stylesheet" href="../assets/css/formulaire.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifier l'article</title>
+    <title>Blog</title>
 </head>
 <body>
+<button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>
     <div class="form-page">
         <div class="form-card">
             <header class="form-card__header">

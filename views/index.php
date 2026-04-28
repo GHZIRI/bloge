@@ -16,10 +16,12 @@ $currentPage = basename($_SERVER['PHP_SELF']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Explore Articles</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="../assets/css/home.css">
 </head>
 <body>
+    
+    <button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>
     <header>
         <h1>Welcome to my blog</h1>
         <p>Explore the latest articles on technology, education, and storytelling.</p>

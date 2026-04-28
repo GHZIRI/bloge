@@ -1,0 +1,123 @@
+:root {
+    --page-bg: #eef2ff;
+    --surface: #ffffff;
+    --surface-soft: #f8fafc;
+    --border: #dbeafe;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #2563eb;
+    --accent-strong: #1d4ed8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: var(--page-bg);
+    color: var(--text-primary);
+}
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.auth-card {
+    width: min(480px, 100%);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.1);
+}
+
+.auth-card h2 {
+    margin: 0 0 1.25rem;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.auth-card p {
+    margin: 0.75rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.auth-card a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+}
+
+label {
+    display: block;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface-soft);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+}
+
+button {
+    width: 100%;
+    border: none;
+    border-radius: 999px;
+    padding: 0.95rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--accent);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: var(--accent-strong);
+}
+
+.error-message {
+    color: #dc2626;
+    background: #fce7e7;
+    border: 1px solid #fecaca;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    margin-bottom: 1rem;
+}

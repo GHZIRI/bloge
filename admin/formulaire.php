@@ -31,10 +31,10 @@ if(isset($_POST["add"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/formulaire.css">
-    <title>Add Article</title>
+    <title>Blog</title>
 </head>
 <body>
-    <div class="form-page">
+<button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>    <div class="form-page">
         <div class="form-card">
             <header class="form-card__header">
                 <h1>Ajouter un article</h1>

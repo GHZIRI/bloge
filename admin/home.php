@@ -14,9 +14,10 @@ $posts = $articleObj->read();
     <link rel="stylesheet" href="../assets/css/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
+    <title>Blog</title>
 </head>
 <body>
+<button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>   
     <div class="page">
         <header class="page-header">
             <h1>My Blog Articles</h1>
