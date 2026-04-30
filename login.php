@@ -51,9 +51,9 @@ if (isset($_POST["clicke"])) {
     <div class="auth-card">
         <h2>Login</h2>
 
-        <?php if ($error): ?>
+        <?php if ($error){ ?>
             <div class="error-message"><?php echo $error; ?></div>
-        <?php endif; ?>
+        <?php } ?>
 
         <form action="" method="POST">
             <label>Email:</label>

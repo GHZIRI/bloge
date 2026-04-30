@@ -40,13 +40,13 @@ if(isset($_GET['id'])) {
             <li><a href="articles.php" class="active">Articles</a></li>
             <li><a href="contact.php">Contact</a></li>
         </ul>
-        <?php if (isset($_SESSION['user_name'])): ?>
-            <div class="nav-user">
-                <span class="user-icon">&#128100;</span>
-                <span class="user-name"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
-                <a href="../logout.php" class="logout-link">Logout</a>
-            </div>
-        <?php endif; ?>
+        <?php if (isset($_SESSION['user_name'])) { ?>
+    <div class="nav-user">
+        <span class="user-icon">&#128100;</span>
+        <span class="user-name"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+        <a href="../logout.php" class="logout-link">Logout</a>
+    </div>
+<?php } ?>
     </nav>
     <div class="article-page">
         <header class="article-header">
