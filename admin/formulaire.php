@@ -15,7 +15,7 @@ if(isset($_POST["add"])){
     $article->date_publication = date('Y-m-d H:i:s');
     
     $article->id_user = 1; 
-    $article->id_catalog = 1;
+    $article->id_catalog = 1;   
 
     if($article->create()){
         header("Location: home.php");
